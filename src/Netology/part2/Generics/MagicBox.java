@@ -1,4 +1,4 @@
-package Generics;
+package Netology.part2.Generics;
 
 import java.util.Random;
 import java.util.Arrays;
