@@ -1,0 +1,8 @@
+part1/
+Git/
+out/
+target/
+Other/
+*.iml
+*.idea
+
