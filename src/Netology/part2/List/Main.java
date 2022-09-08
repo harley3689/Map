@@ -24,9 +24,7 @@ public class Main {
                 listProd.add(add);
                 List(listProd);
             } else if (oper == 2) {
-                for (int i = 0; i < listProd.size(); i++) {
-                    System.out.println("Shopping list: " + (i + 1) + ". " + listProd.get(i));
-                }
+                List(listProd);
             } else if (oper == 3) {
                 List(listProd);
                 System.out.println("Select the number or name of the purchase you want to delete?");
