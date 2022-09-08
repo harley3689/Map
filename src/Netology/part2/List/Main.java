@@ -22,18 +22,13 @@ public class Main {
                 input = scan.nextLine();
                 String add = input;
                 listProd.add(add);
-                for (int i = 0; i < listProd.size(); i++) {
-                    System.out.println("Shopping list: " + (i + 1) + ". " + listProd.get(i));
-                }
+                List(listProd);
             } else if (oper == 2) {
                 for (int i = 0; i < listProd.size(); i++) {
                     System.out.println("Shopping list: " + (i + 1) + ". " + listProd.get(i));
                 }
             } else if (oper == 3) {
-                for (int i = 0; i < listProd.size(); i++) {
-                    System.out.println("Shopping list: " + (i + 1) + ". " + listProd.get(i));
-                }
-
+                List(listProd);
                 System.out.println("Select the number or name of the purchase you want to delete?");
                 String del = scan.nextLine();
 
@@ -41,15 +36,11 @@ public class Main {
                     int delNum = Integer.parseInt(del);
                     System.out.println("Product: " + listProd.get(delNum - 1) + ", removed from product list.");
                     listProd.remove(delNum - 1);
-                    for (int i = 0; i < listProd.size(); i++) {
-                        System.out.println("Shopping list: " + (i + 1) + "." + listProd.get(i));
-                    }
+                    List(listProd);
                 } catch (NumberFormatException E) {
                     System.out.println("Product: " + del + ", removed from product list.");
                     listProd.remove(del);
-                    for (int i = 0; i < listProd.size(); i++) {
-                        System.out.println("Shopping list: " + (i + 1) + ". " + listProd.get(i));
-                    }
+                    List(listProd);
 
                 }
 
@@ -68,9 +59,12 @@ public class Main {
             } else if (input.equals("end")) {
                 break;
             }
-
-
         }
+    }
 
+    private static void List(List<String> ArrayList) {
+        for (int i = 0; i < ArrayList.size(); i++) {
+            System.out.println("Shopping list: " + (i + 1) + ". " + ArrayList.get(i));
+        }
     }
 }
