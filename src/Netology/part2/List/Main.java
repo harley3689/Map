@@ -12,9 +12,12 @@ public class Main {
         List<String> listProd = new ArrayList<>();
 
         while (true) {
-            System.out.println("Choose the operation number:" + "\n1.Add:" + "\n2.Show:" + "\n3.Delete:" + "\n4.Find:");
+            System.out.println("Choose the operation number:" + "\n1.Add:" + "\n2.Show:" + "\n3.Delete:" + "\n4.Find:"+"\nend - to quit.");
 
             String input = scan.nextLine();
+            if ("end".equals(input)) {
+                break;
+            }
             int oper = Integer.parseInt(input);
 
             if (oper == 1) {
@@ -54,12 +57,9 @@ public class Main {
                     }
                 }
 
-            } else if (input.equals("end")) {
-                break;
             }
         }
     }
-
     private static void List(List<String> ArrayList) {
         for (int i = 0; i < ArrayList.size(); i++) {
             System.out.println("Shopping list: " + (i + 1) + ". " + ArrayList.get(i));
