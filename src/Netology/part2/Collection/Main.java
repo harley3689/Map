@@ -1,6 +1,5 @@
 package Netology.part2.Collection;
 
-//import java.util.ArrayList;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
