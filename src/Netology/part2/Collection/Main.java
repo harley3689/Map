@@ -4,27 +4,26 @@ package Netology.part2.Collection;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Deque;
+import java.util.Queue;
 
 
 public class Main {
     public static void main(String[] args) {
-        Deque<Person> personDeque = new LinkedList<>();
-        personDeque.addAll(generateClients());
+        Queue<Person> personQueue = new LinkedList<>();
+        personQueue.addAll(generateClients());
 
-        while (!personDeque.isEmpty()) {
-            Person used = personDeque.peek();
-            if (used.tkt > 0) {
-                System.out.println(used.name + " " + used.surname + " used.");
-                used.tkt -= 1;
-                if (used.tkt != 0) {
-                    personDeque.offerLast(used);
-                } else {
-                    personDeque.remove(used);
-                }
+        while (!personQueue.isEmpty()) {
+            Person person = personQueue.poll();
+            if (person.getTkt() != 0) {
+                person.spendTicket();
+                System.out.println(person.getName() + " " + person.getSurname() + ", tickets left:" + person.getTkt());
 
             }
-            personDeque.remove(used);
+            if (person.getTkt() > 0) {
+                personQueue.offer(person);
+            }
+
+
         }
 
     }
@@ -46,6 +45,4 @@ public class Main {
         return personList;
 
     }
-
-
 }
