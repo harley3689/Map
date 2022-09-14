@@ -3,9 +3,10 @@ Git/
 out/
 target/
 Other/
+Collection/
 *.iml
 *.idea
 README.md
 Generics/
 List/
-Collection/
+
